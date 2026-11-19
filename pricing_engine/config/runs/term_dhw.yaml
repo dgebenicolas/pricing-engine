@@ -1,0 +1,24 @@
+# Default run: DHW term example, Sec. 13.3-13.5 (pp. 509-521).
+# Paths are relative to pricing_engine/config/.
+product: term_life
+product_config: null              # term has no product settings
+model_point: model_points/term_dhw.yaml
+reserve_method: net_premium       # none | net_premium | fpt | zeroized
+reserve_basis: bases/term_reserve.yaml
+profit_basis: bases/term_profit.yaml
+risk_discount: 0.10               # r, DHW p. 519
+metric: npv                       # npv | profit_margin | irr
+
+# Shock sizes: mortality, lapse, expenses multiply (1 = none);
+# interest adds to the rate (0 = none, -0.01 = one point lower).
+shocks:                           # tornado: field: [low, high]
+  mortality: [0.9, 1.1]
+  interest: [-0.01, 0.01]
+  expenses: [0.9, 1.1]
+spider:                           # field: [sizes...]
+  mortality: [0.5, 0.75, 1.0, 1.25, 1.5]
+  interest: [-0.02, -0.01, 0.0, 0.01, 0.02]
+  expenses: [0.5, 0.75, 1.0, 1.25, 1.5]
+scenarios:                        # name: {field: size, ...} applied together
+  adverse: {mortality: 1.1, expenses: 1.1, interest: -0.01}
+  favorable: {mortality: 0.9, expenses: 0.9, interest: 0.01}

@@ -1,0 +1,5 @@
+# Whole life, reserve basis (FPT net premium policy values). DHW pp. 524, 526.
+mortality: ../mortality/susm.csv
+interest: 0.05
+lapse: null
+expenses: null

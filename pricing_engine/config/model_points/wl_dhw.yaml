@@ -1,0 +1,5 @@
+# Whole life, DHW Example 13.1 (p. 524).
+issue_age: 60
+sum_insured: 100000
+premium: 2300
+term: null        # whole of life

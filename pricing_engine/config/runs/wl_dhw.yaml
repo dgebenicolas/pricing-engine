@@ -1,0 +1,26 @@
+# Default run: DHW whole life Example 13.1 (pp. 524-527), non-par.
+# Paths are relative to pricing_engine/config/.
+product: whole_life
+product_config: products/whole_life_dhw.yaml
+model_point: model_points/wl_dhw.yaml
+reserve_method: fpt               # none | net_premium | fpt | zeroized
+reserve_basis: bases/wl_reserve.yaml
+profit_basis: bases/wl_profit.yaml
+risk_discount: 0.10
+metric: npv                       # npv | profit_margin | irr
+
+# Shock sizes: mortality, lapse, expenses multiply (1 = none);
+# interest adds to the rate (0 = none, -0.01 = one point lower).
+shocks:                           # tornado: field: [low, high]
+  mortality: [0.9, 1.1]
+  interest: [-0.01, 0.01]
+  lapse: [0.5, 1.5]
+  expenses: [0.9, 1.1]
+spider:                           # field: [sizes...]
+  mortality: [0.5, 0.75, 1.0, 1.25, 1.5]
+  interest: [-0.02, -0.01, 0.0, 0.01, 0.02]
+  lapse: [0.5, 0.75, 1.0, 1.25, 1.5]
+  expenses: [0.5, 0.75, 1.0, 1.25, 1.5]
+scenarios:                        # name: {field: size, ...} applied together
+  adverse: {mortality: 1.1, lapse: 1.5, expenses: 1.1, interest: -0.01}
+  favorable: {mortality: 0.9, lapse: 0.5, expenses: 0.9, interest: 0.01}

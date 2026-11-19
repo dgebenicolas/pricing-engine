@@ -1,0 +1,8 @@
+# Term insurance, profit basis. DHW Sec. 13.3, pp. 509-510.
+mortality: ../mortality/term_profit.csv   # q_{60+t} = 0.01 + 0.001t
+interest: 0.055
+lapse: null                               # no lapses
+expenses:
+  initial_fixed: 400                      # pre-contract: 400 + 20% of first premium
+  initial_pct: 0.20
+  renewal_pct: 0.035                      # 3.5% of premiums, including the first

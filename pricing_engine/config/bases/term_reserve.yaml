@@ -1,0 +1,5 @@
+# Term insurance, reserve basis (net premium policy values). DHW p. 512.
+mortality: ../mortality/term_reserve.csv  # q_{60+t} = 0.011 + 0.001t
+interest: 0.04
+lapse: null
+expenses: null

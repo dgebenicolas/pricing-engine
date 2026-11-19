@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pricing-engine"
+version = "0.1.0"
+description = "Life insurance pricing and profit-testing engine (DHW Ch. 13-14)"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "pyyaml",
+]
+
+[project.optional-dependencies]
+app = ["streamlit"]
+dev = ["pytest"]
+
+[tool.setuptools.packages.find]
+include = ["pricing_engine*"]
+
+[tool.setuptools.package-data]
+pricing_engine = ["config/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

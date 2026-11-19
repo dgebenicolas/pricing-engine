@@ -1,0 +1,5 @@
+# Term insurance, DHW Sec. 13.3 (pp. 509-510).
+issue_age: 60
+sum_insured: 100000
+premium: 1500
+term: 10

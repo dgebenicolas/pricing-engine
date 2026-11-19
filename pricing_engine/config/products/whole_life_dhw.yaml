@@ -1,0 +1,5 @@
+# Whole life, DHW Example 13.1 (pp. 524-525).
+# Cash value on surrender at end of year t = h_t * tV.
+# h_t: 0 for years 1-4, 10% in year 5 rising 10% a year to 90% in year 13;
+# the last value applies to every later year.
+cash_value_pct: [0, 0, 0, 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9]

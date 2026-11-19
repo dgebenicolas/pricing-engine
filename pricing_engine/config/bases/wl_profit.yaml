@@ -1,0 +1,11 @@
+# Whole life, profit basis. DHW Example 13.1, p. 525.
+mortality: ../mortality/susm.csv          # Standard Ultimate Survival Model
+interest: 0.06
+lapse_timing: year_end
+lapse:                                    # surrenders at each year end
+  - {from_year: 1, to_year: 9, rate: 0.05}
+  - {from_year: 10, to_year: 29, rate: 0.075}
+  - {from_year: 30, rate: 1.0}            # all survivors surrender at end of year 30
+expenses:
+  initial_fixed: 1800                     # pre-contract, at t = 0
+  renewal_fixed: 100                      # with each premium, including the first
