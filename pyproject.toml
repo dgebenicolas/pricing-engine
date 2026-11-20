@@ -22,7 +22,7 @@ dev = ["pytest"]
 include = ["pricing_engine*"]
 
 [tool.setuptools.package-data]
-pricing_engine = ["config/*"]
+pricing_engine = ["config/**/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

@@ -3,5 +3,4 @@ __pycache__/
 .pytest_cache/
 docs/*.pdf
 *.egg-info/
-CLAUDE.md
-.claude/
+build/
